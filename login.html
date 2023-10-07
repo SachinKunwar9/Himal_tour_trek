@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #63c5e9;
+        background-image:url(./file/image/pavl-polo-2H2YSpew3kU-unsplash.jpg);
+        background-position:center;
+        background-size:cover;
+
+      }
+      .login-container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+       
+
+        
+      }
+      .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      .login {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .login:hover,
+      .signup-btn:hover {
+        transform: scale(90%);
+        background-color: rgba(6, 47, 88, 0.644);
+      }
+      .signup-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    </style>
+
+
+
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password"  />
+        </div>
+        <button type="submit" class="login">Submit</button>
+      </form>
+      <button class="signup-btn" onclick="goToSignUp()">Sign Up First</button>
+    </div>
+    </div>
+  </body>
+      <!-- _______________________________________________________ -->
+      <script src="file/main.js">
+    
+
+      </script>
+</html>
+
+

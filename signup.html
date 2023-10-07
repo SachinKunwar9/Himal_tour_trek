@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+      .login-container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+      }
+      .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #5e054fb6;
+        color: #fff;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .btn:hover,
+      .signup-btn:hover {
+        transform: scale(90%);
+        background-color: rgba(12, 98, 13, 0.644);
+      }
+      .signup-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    </style>
+
+    <!-- _______________________________________________________ -->
+  
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Sign up</h2>
+      <form action="signup.html" method="post">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <label for="username">Username:</label>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button onclick="goToSignUp()"  class="signin">Submit</button>
+      </form>
+      
+  </body>
+  <script>
+    const person=document.getElementById('username')
+     
+    function goToSignUp() {
+      alert(
+        `Welcome to Himaal mr. ${person.value}`
+      );
+      // Redirect to the home page after a brief delay
+      setTimeout(function () {
+        window.location.href = "file/index.html";
+        L;
+      }, 1000);
+    }
+  </script>
+</html>

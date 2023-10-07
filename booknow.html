@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Your Tour</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("../image/valley-of-flowers-2.webp") center center/cover
+          no-repeat;
+      }
+      .book-container {
+        width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: linear-gradient(
+          rgb(6, 56, 117),
+          rgba(255, 0, 115, 0.84),
+          rgb(17, 226, 10)
+        );
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(3, 92, 37, 0.974);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .book-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+      }
+      .book-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #25d2cf;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #11e1c9;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        transition: border-color 0.3s;
+      }
+      .form-group input:focus,
+      .form-group select:focus {
+        border-color: #3498db;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.4s ease;
+      }
+      .btn:hover {
+        background-color: #b9299c;
+        transform: scale(92%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="booking" class="book-container">
+      <h2>Book Your Tour</h2>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"  />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"  />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"  />
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination">
+          <option value="Roopkund">Roopkund</option>
+          <option value="Munsyari">Munsyari</option>
+          <option value=":Nanda Mountain">Nanda Mountain</option>
+          <option value="Nandi kund">NandiKund</option>
+          <option value="Kedarnath">Kedarath</option>
+          <option value="Badrinath">Badrinath</option>
+          <option value="Home Kund">HomeKund</option>
+          <option value="Rudrnath">Rudrnath</option>
+          <option value="Tungnath">Tungnath</option>
+          <option value="Badni Bugyal">Badni Bugyal</option>        
+          <option value="PithoraGarh">Pithoragarh</option>         
+          <option value="NainiTal">Nainital</option>         
+          <option value="Madmaheshwar">Madmaheshwar</option>         
+          <option value="Vally of flower">vally Of flower</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="payscale">Pay Scale ($):</label>
+        <input type="number" id="payscale" name="payscale"  />
+      </div>
+      <div class="form-group">
+        <label for="time">Time:</label>
+        <input
+          type="text"
+          id="time"
+          name="time"
+          placeholder="E.g., Full Day, 4 Hours, etc."
+          
+        />
+      </div>
+
+      <button type="submit" id ='bok' class="btn" ">Book Now</button>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("bok").addEventListener("click", (event) => {
+  event.preventDefault();
+
+  
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const destination = document.getElementById("destination").value;
+  const payscale = document.getElementById("payscale").value;
+
+  fetch("/booknow", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, email, phone, destination, payscale }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      setTimeout(() => {
+        alert(`Mr ${name} You have booked ${destination} successfully`);
+        window.location.href = "file/index.html"; // Redirect on success
+      }, 2000);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
+});  
+
+  </script>
+</html>
